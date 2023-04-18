@@ -10,14 +10,14 @@ HERE = pathlib.Path(__file__).parent
 README = (HERE / "README.md").read_text()
 
 setup(
-    name                =   "rapidscan",
+    name                =   "turboscan",
     version             =   '1.2',
     description         =   "The Multi-Tool Web Vulnerability Scanner.",
     long_description    =   README,
     long_description_content_type = "text/markdown",
-    url                 =   "https://github.com/rwhitedevil/rapidscan",
+    url                 =   "https://github.com/rwhitedevil/turboscan",
     author              =   "WhiteDevil",
-    py_modules          =   ['rapidscan',],
+    py_modules          =   ['turboscan',],
     install_requires    =   [],
     python_requires=">=3.6",
 )
