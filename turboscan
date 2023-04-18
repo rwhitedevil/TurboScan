@@ -163,10 +163,10 @@ def clear():
 def logo():
     print(bcolors.WARNING)
     logo_ascii = """
-                                  __         __
-                                 /__)_  """+bcolors.BADFAIL+" ●"+bcolors.WARNING+"""_/(  _ _
-                                / ( (//)/(/__)( (//)
-                                     /
+                                _____         __
+                                 /     | """+bcolors.BADFAIL+" ●"+bcolors.WARNING+"""_/(  _ _
+                                / |_|/*|_|()__)( (//)
+                                     
                      """+bcolors.ENDC+"""(The Multi-Tool Web Vulnerability Scanner)
 
     """
