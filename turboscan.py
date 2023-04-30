@@ -1590,3 +1590,37 @@ elif args_namespace.target:
 
     os.system('setterm -cursor on')
     os.system('rm /tmp/turboscan_te* > /dev/null 2>&1') # Clearing previous scan files
+    
+    import nmap
+
+# Define function to generate report
+def generate_report(scan_results):
+    report = "Rapidscan Report:\n\n"
+    for target, results in scan_results.items():
+        report += f"Target: {target}\n"
+        for scan_type, result in results.items():
+            report += f"{scan_type.capitalize()} Results:\n"
+            report += f"{result}\n"
+        report += "\n"
+    return report
+
+# Define target IP addresses to scan
+targets = ["192.168.0.1", "192.168.0.2"]
+
+# Loop through targets and perform scans
+scan_results = {}
+for target in targets:
+    scanner = nmap.PortScanner()
+    port_scan_results = scanner.scan(target, arguments="-p1-1000")
+    vuln_scan_results = "No vulnerabilities found."
+    # Perform vulnerability scan if desired
+    # vuln_scan_results = perform_vuln_scan(target)
+    scan_results[target] = {"port_scan": port_scan_results, "vuln_scan": vuln_scan_results}
+
+# Generate report from scan results
+report = generate_report(scan_results)
+
+# Write report to file
+with open("rapidscan_report.txt", "w") as f:
+    f.write(report)
+
