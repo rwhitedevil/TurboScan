@@ -1590,5 +1590,3 @@ elif args_namespace.target:
 
     os.system('setterm -cursor on')
     os.system('rm /tmp/turboscan_te* > /dev/null 2>&1') # Clearing previous scan files
- 
-
