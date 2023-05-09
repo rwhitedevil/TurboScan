@@ -12,7 +12,7 @@ README = (HERE / "README.md").read_text()
 setup(
     name                =   "turboscan",
     version             =   '1.2',
-    description         =   "The Multi-Tool Web Vulnerability Scanner.",
+    description         =   "Web Vulnerability Scanner Tool.",
     long_description    =   README,
     long_description_content_type = "text/markdown",
     url                 =   "https://github.com/rwhitedevil/turboscan",
