@@ -1592,26 +1592,4 @@ elif args_namespace.target:
     os.system('setterm -cursor on')
     os.system('rm /tmp/turboscan_te* > /dev/null 2>&1') # Clearing previous scan files
     
-    import requests
-
-def report_vulnerability(url, vulnerability):
-    headers = {
-        'Authorization': 'Bearer <PCF21KOwvF59d+L5nC2s0kimBTJkqHaSelAPZ/Vprzw=>',
-        'Content-Type': 'application/json'
-    }
-    
-    data = {
-        'type': 'vulnerability',
-        'attributes': {
-            'description': vulnerability
-        }
-    }
-    
-    response = requests.post(url, headers=headers, json=data)
-    
-    if response.status_code == 201:
-        print('Vulnerability reported successfully.')
-    else:
-        print('Error reporting vulnerability: ', response.content)
-
   
